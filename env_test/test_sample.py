@@ -18,5 +18,12 @@ def test_multiple_items_no_taxes_or_shipping():
     result = sample.calculate_order(item_list, location)
     assert result[1] == 60
 
+def test_calculate_taxes_by_location():
+    item_list = {'item_1': 1}
+    location = 'Iceland'
+    result = sample.calculate_order(item_list, location)
+    assert result[2] == 10*0.24
+
+
 
     
